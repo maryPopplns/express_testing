@@ -4,6 +4,7 @@ var http = require('http');
 var app = express();
 
 const ROUTE = path.resolve(__dirname, 'route');
+
 app.use(express.static(ROUTE));
 
 app.get('/', function (request, response) {
@@ -12,7 +13,7 @@ app.get('/', function (request, response) {
 });
 
 app.get('/about', function (request, response) {
-  response.redirect('./route.html');
+  response.sendFile('./public/teal.png', { root: __dirname });
 });
 
 http.createServer(app).listen(3000);
