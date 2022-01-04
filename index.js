@@ -1,19 +1,22 @@
 var express = require('express');
 var path = require('path');
 var http = require('http');
+
 var app = express();
 
-const ROUTE = path.resolve(__dirname, 'route');
-
-app.use(express.static(ROUTE));
+app.set('views', path.resolve(__dirname, 'template'));
+app.set('view engine', 'ejs');
 
 app.get('/', function (request, response) {
-  response.writeHead(200, { 'Content-Type': 'text/plain' });
-  response.end("Looks like you didn't find a static file.");
+  response.render('index', {
+    message: 'yo this is my template',
+  });
 });
 
 app.get('/about', function (request, response) {
-  response.sendFile('./public/teal.png', { root: __dirname });
+  response.render('one', {
+    message: 'numba one',
+  });
 });
 
 http.createServer(app).listen(3000);
