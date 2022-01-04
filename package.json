@@ -1,0 +1,19 @@
+{
+  "name": "express_testing",
+  "version": "1.0.0",
+  "description": "testing express features",
+  "main": "index.js",
+  "scripts": {
+    "add": "git add . && git commit && git push origin $(git rev-parse --abbrev-ref HEAD) && echo '\n' && echo $(tput setaf 2)'commited: ' $(tput setaf 1)$(date) && echo '\n'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maryPopplns/express_testing.git"
+  },
+  "author": "spencer knight",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maryPopplns/express_testing/issues"
+  },
+  "homepage": "https://github.com/maryPopplns/express_testing#readme"
+}
